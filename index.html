@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Hotel Website</title>
    <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
    <!-- swiper js cdn link -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <!-- custom css link -->
-   <link rel="stylesheet" href="style.css">
+   <!-- custom css link -->
+   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
    <!-- header -->
 
    <header class="header">
-
       <a href="#" class="logo"> <i class="fas fa-hotel"></i> hotel </a>
-
       <nav class="navbar">
          <a href="#home">home</a>
          <a href="#about">about</a>
+         <a aria-label="#property">
+            <select id="property" onchange="navigateTo(this.value)">
+               <option value="" disabled selected>property</option>
+               <option value="property1">Property 1</option>
+               <option value="property2">Property 2</option>
+            </select>
+         </a>
          <a href="#room">room</a>
          <a href="#gallery">gallery</a>
-         <a href="#review">review</a>
-         <a href="#reservation" class="btn"> book now</a>
-      </nav>
+         <a href="#contact">Contact us</a>
 
-      <div id="menu-btn" class="fas fa-bars"></div>
-
+         <script>
+            function navigateTo(property) {
+               var propertySelect = document.getElementById("property");
+               var property = propertySelect.value;
+               if (property === "property1") {
+                  window.open("property1.html", "_blank");
+               } else if (property === "property2") {
+                  window.open("property2.html", "_blank");
+               }
+               propertySelect.selectedIndex = 0; // Reset the dropdown selection
+               propertySelect.options[0].disabled = true; // Disable the "Select a property" option
+            }
+         </script>
+         <div id="menu-btn" class="fas fa-bars"></div>
    </header>
 
    <!-- end -->
@@ -38,46 +54,40 @@
    <!-- home -->
 
    <section class="home" id="home">
-
       <div class="swiper home-slider">
-
          <div class="swiper-wrapper">
-
-            <div class="swiper-slide slide" style="background: url(images/home-slide1.jpg) no-repeat;">
+            <div class="swiper-slide slide" style="background: url(images/home-slide1.jpg) no-repeat">
                <div class="content">
                   <h3>it's where dreams come true</h3>
                   <a href="#" class="btn"> visit our offer</a>
                </div>
             </div>
 
-            <div class="swiper-slide slide" style="background: url(images/home-slide2.jpg) no-repeat;">
+            <div class="swiper-slide slide" style="background: url(images/home-slide2.jpg) no-repeat">
                <div class="content">
                   <h3>it's where dreams come true</h3>
                   <a href="#" class="btn"> visit our offer</a>
                </div>
             </div>
 
-            <div class="swiper-slide slide" style="background: url(images/home-slide3.jpg) no-repeat;">
+            <div class="swiper-slide slide" style="background: url(images/home-slide3.jpg) no-repeat">
                <div class="content">
                   <h3>it's where dreams come true</h3>
                   <a href="#" class="btn"> visit our offer</a>
                </div>
             </div>
 
-            <div class="swiper-slide slide" style="background: url(images/home-slide4.jpg) no-repeat;">
+            <div class="swiper-slide slide" style="background: url(images/home-slide4.jpg) no-repeat">
                <div class="content">
                   <h3>it's where dreams come true</h3>
                   <a href="#" class="btn"> visit our offer</a>
                </div>
             </div>
-
          </div>
 
          <div class="swiper-button-next"></div>
          <div class="swiper-button-prev"></div>
-
       </div>
-
    </section>
 
    <!-- end -->
@@ -142,48 +152,60 @@
 
    <!-- end -->
 
-
    <!-- about -->
 
    <section class="about" id="about">
-
       <div class="row">
-
          <div class="image">
-            <img src="images/about.jpg" alt="">
+            <img src="images/about.jpg" alt="" />
          </div>
 
          <div class="content">
             <h3>about us</h3>
-            <p>Welcome to our hotel booking website! We take pride in offering exceptional facilities and a comfortable stay for our guests. At Hyatt, we provide a wide range of amenities to ensure your visit is enjoyable and memorable. From spacious and well-appointed rooms to state-of-the-art fitness centers and relaxing spa facilities, we have everything you need for a pleasant stay. Our dedicated staff is committed to delivering top-notch service and catering to your needs, ensuring a truly satisfying experience from check-in to check-out.</p>
-            <p>At Hyatt, we understand the importance of a good night's sleep and a comfortable stay. Our rooms are designed with your utmost comfort in mind, featuring cozy beds, modern furnishings, and tasteful decor. Additionally, our on-site restaurants offer a delightful culinary experience, serving a variety of delectable dishes crafted by our talented chefs. Whether you're here for business or leisure, our meeting rooms and event spaces are equipped to host successful gatherings. We strive to provide you with all the amenities and services you require for a truly enjoyable and relaxing stay at Hyatt.</p>
+            <p>
+               Welcome to our hotel booking website! We take pride in offering
+               exceptional facilities and a comfortable stay for our guests. At
+               Hyatt, we provide a wide range of amenities to ensure your visit is
+               enjoyable and memorable. From spacious and well-appointed rooms to
+               state-of-the-art fitness centers and relaxing spa facilities, we
+               have everything you need for a pleasant stay. Our dedicated staff is
+               committed to delivering top-notch service and catering to your
+               needs, ensuring a truly satisfying experience from check-in to
+               check-out.
+            </p>
+            <p>
+               At Hyatt, we understand the importance of a good night's sleep and a
+               comfortable stay. Our rooms are designed with your utmost comfort in
+               mind, featuring cozy beds, modern furnishings, and tasteful decor.
+               Additionally, our on-site restaurants offer a delightful culinary
+               experience, serving a variety of delectable dishes crafted by our
+               talented chefs. Whether you're here for business or leisure, our
+               meeting rooms and event spaces are equipped to host successful
+               gatherings. We strive to provide you with all the amenities and
+               services you require for a truly enjoyable and relaxing stay at
+               Hyatt.
+            </p>
          </div>
-
       </div>
-
    </section>
 
-   <!-- end -->
-
-   <!-- room -->
-
    <section class="room" id="room">
-
       <h1 class="heading">our room</h1>
 
       <div class="swiper room-slider">
-
          <div class="swiper-wrapper">
-
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">$15.99/night</span>
-                  <img src="images/room-1.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <img src="images/room-1.jpg" alt="" />
+                  <!--  <a href="#" class="fas fa-shopping-cart"></a>-->
                </div>
                <div class="content">
                   <h3>exclusive room</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nisi.</p>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Sapiente nisi.
+                  </p>
                   <div class="stars">
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
@@ -191,19 +213,22 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">book now</a>
+                  <!-- <a href="#" class="btn">book now</a>-->
                </div>
             </div>
 
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">$15.99/night</span>
-                  <img src="images/room-2.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <img src="images/room-2.jpg" alt="" />
+                  <!-- <a href="#" class="fas fa-shopping-cart"></a>-->
                </div>
                <div class="content">
                   <h3>exclusive room</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nisi.</p>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Sapiente nisi.
+                  </p>
                   <div class="stars">
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
@@ -211,19 +236,22 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">book now</a>
+                  <!-- <a href="#" class="btn">book now</a>-->
                </div>
             </div>
 
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">$15.99/night</span>
-                  <img src="images/room-3.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <img src="images/room-3.jpg" alt="" />
+                  <!-- <a href="#" class="fas fa-shopping-cart"></a>-->
                </div>
                <div class="content">
                   <h3>exclusive room</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nisi.</p>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Sapiente nisi.
+                  </p>
                   <div class="stars">
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
@@ -231,19 +259,22 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">book now</a>
+                  <!--  <a href="#" class="btn">book now</a>-->
                </div>
             </div>
 
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">$15.99/night</span>
-                  <img src="images/room-4.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <img src="images/room-4.jpg" alt="" />
+                  <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
                </div>
                <div class="content">
                   <h3>exclusive room</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nisi.</p>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Sapiente nisi.
+                  </p>
                   <div class="stars">
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
@@ -251,19 +282,22 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">book now</a>
+                  <!--   <a href="#" class="btn">book now</a>-->
                </div>
             </div>
 
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">$15.99/night</span>
-                  <img src="images/room-5.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <img src="images/room-5.jpg" alt="" />
+                  <!-- <a href="#" class="fas fa-shopping-cart"></a>-->
                </div>
                <div class="content">
                   <h3>exclusive room</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nisi.</p>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Sapiente nisi.
+                  </p>
                   <div class="stars">
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
@@ -271,19 +305,22 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">book now</a>
+                  <!-- <a href="#" class="btn">book now</a>-->
                </div>
             </div>
 
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">$15.99/night</span>
-                  <img src="images/room-6.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <img src="images/room-6.jpg" alt="" />
+                  <!--  <a href="#" class="fas fa-shopping-cart"></a>-->
                </div>
                <div class="content">
                   <h3>exclusive room</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nisi.</p>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Sapiente nisi.
+                  </p>
                   <div class="stars">
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
@@ -291,16 +328,13 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">book now</a>
+                  <!-- <a href="#" class="btn">book now</a>-->
                </div>
             </div>
-
          </div>
 
          <div class="swiper-pagination"></div>
-
       </div>
-
    </section>
 
    <!-- end -->
@@ -308,41 +342,37 @@
    <!-- services -->
 
    <section class="services">
-
       <div class="box-container">
-
          <div class="box">
-            <img src="images/service1.png" alt="">
+            <img src="images/service1.png" alt="" />
             <h3>swimming pool</h3>
          </div>
 
          <div class="box">
-            <img src="images/service2.png" alt="">
+            <img src="images/service2.png" alt="" />
             <h3>food & drink</h3>
          </div>
 
          <div class="box">
-            <img src="images/service3.png" alt="">
+            <img src="images/service3.png" alt="" />
             <h3>restaurant</h3>
          </div>
 
          <div class="box">
-            <img src="images/service4.png" alt="">
+            <img src="images/service4.png" alt="" />
             <h3>fitness</h3>
          </div>
 
          <div class="box">
-            <img src="images/service5.png" alt="">
+            <img src="images/service5.png" alt="" />
             <h3>beauty spa</h3>
          </div>
 
          <div class="box">
-            <img src="images/service6.png" alt="">
+            <img src="images/service6.png" alt="" />
             <h3>resort beach</h3>
          </div>
-
       </div>
-
    </section>
 
    <!-- end -->
@@ -350,71 +380,79 @@
    <!-- gallery -->
 
    <section class="gallery" id="gallery">
-
       <h1 class="heading">our gallery</h1>
 
       <div class="swiper gallery-slider">
-
          <div class="swiper-wrapper">
-
             <div class="swiper-slide slide">
-               <img src="images/gallery1.jpg" alt="">
+               <img src="images/gallery1.jpg" alt="" />
                <div class="icon">
                   <i class="fas fa-magnifying-glass-plus"></i>
                </div>
             </div>
 
             <div class="swiper-slide slide">
-               <img src="images/gallery2.jpg" alt="">
+               <img src="images/gallery2.jpg" alt="" />
                <div class="icon">
                   <i class="fas fa-magnifying-glass-plus"></i>
                </div>
             </div>
 
             <div class="swiper-slide slide">
-               <img src="images/gallery3.jpg" alt="">
+               <img src="images/gallery3.jpg" alt="" />
                <div class="icon">
                   <i class="fas fa-magnifying-glass-plus"></i>
                </div>
             </div>
 
             <div class="swiper-slide slide">
-               <img src="images/gallery4.jpg" alt="">
+               <img src="images/gallery4.jpg" alt="" />
                <div class="icon">
                   <i class="fas fa-magnifying-glass-plus"></i>
                </div>
             </div>
 
             <div class="swiper-slide slide">
-               <img src="images/gallery5.jpg" alt="">
+               <img src="images/gallery5.jpg" alt="" />
                <div class="icon">
                   <i class="fas fa-magnifying-glass-plus"></i>
                </div>
             </div>
 
             <div class="swiper-slide slide">
-               <img src="images/gallery6.jpg" alt="">
+               <img src="images/gallery6.jpg" alt="" />
                <div class="icon">
                   <i class="fas fa-magnifying-glass-plus"></i>
                </div>
             </div>
-
          </div>
-
       </div>
-
    </section>
 
    <!-- end -->
 
    <!-- review -->
 
-   <section class="review" id="review">
+   <section class="contact" id="contact">
+      <!--<div class="swiper review-slider">
+         <div class="swiper-wrapper">-->
 
-      <div class="swiper review-slider">
-         <div class="swiper-wrapper">
+      <h1>Contact Us</h1>
 
-            <div class="swiper-slide slide">
+      <form method="POST" action="send_email.php">
+         <label for="email">Email:</label>
+         <input type="email" id="email" name="email" required /><br /><br />
+
+         <label for="phone">Phone Number:</label>
+         <input type="tel" id="phone" name="phone" required /><br /><br />
+
+         <label for="query">Query:</label><br />
+         <textarea id="query" name="query" rows="5" required></textarea><br /><br />
+
+         <input type="submit" value="Submit" />
+      </form>
+
+      <!--<div class="swiper-slide slide">
                <h2 class="heading">client's review</h2>
                <i class="fas fa-quote-right"></i>
                <p>"I had an amazing stay at this hotel! The staff was friendly and helpful, and the rooms were clean and comfortable. The location was perfect, close to all the attractions. I especially enjoyed the delicious breakfast spread. Highly recommended!"</p>
@@ -431,9 +469,9 @@
                      </div>
                   </div>
                </div>
-            </div>
+           </div>-->
 
-            <div class="swiper-slide slide">
+      <!-- <div class="swiper-slide slide">
                <h2 class="heading">client's review</h2>
                <i class="fas fa-quote-right"></i>
                <p>"I couldn't have asked for a better hotel experience. The room was spacious and well-appointed, with a stunning view. The staff went above and beyond to ensure my stay was exceptional. The amenities, including the pool and gym, were top-notch. I will definitely be coming back!"</p>
@@ -526,12 +564,12 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> -->
 
-         </div>
-         <div class="swiper-pagination"></div>
-      </div>
+      <!-- </div>
 
+         <div class="swiper-pagination"></div>-->
+      <!-- </div>-->
    </section>
 
    <!-- end -->
@@ -584,7 +622,7 @@
    <!-- end -->
 
    <!-- reservation -->
-
+   <!--
    <section class="reservation" id="reservation">
 
       <h1 class="heading">book now</h1>
@@ -665,16 +703,14 @@
 
       </form>
 
-   </section>
+   </section> -->
 
    <!-- end -->
 
    <!-- footer -->
 
    <section class="footer">
-
       <div class="box-container">
-
          <div class="box">
             <h3>contact info</h3>
             <a href="#"> <i class="fas fa-phone"></i> +123-852-4565 </a>
@@ -700,42 +736,25 @@
             <a href="#"> <i class="fas fa-arrow-right"></i> refund policy</a>
             <a href="#"> <i class="fas fa-arrow-right"></i> refund policy</a> -->
          </div>
-
       </div>
 
       <div class="share">
          <a href="#" class="fab fa-facebook-f"></a>
-         <a href="#" class="fab fa-instagram"></a>
+         <!-- <a href="#" class="fab fa-instagram"></a>
          <a href="#" class="fab fa-twitter"></a>
-         <a href="#" class="fab fa-pinterest"></a>
+         <a href="#" class="fab fa-pinterest"></a>-->
       </div>
 
-      <div class="credit">&copy; copyright @ 2023 by <span>contact name</span></div>
-
+      <div class="credit">
+         &copy; copyright @ 2023 by <span>contact name</span>
+      </div>
    </section>
 
    <!-- end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
    <script src="script.js"></script>
-
 </body>
+
 </html>
